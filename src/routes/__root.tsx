@@ -75,10 +75,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Advera Consulting — Strategy, Compliance & Digital Innovation" },
       { name: "description", content: "Advera empowers councils, corporations and institutions through ISO consultancy, strategic management, risk & compliance, and digital transformation." },
       { name: "author", content: "Advera Consulting" },
-      { property: "og:title", content: "Advera Consulting" },
-      { property: "og:description", content: "Bridging expert strategy and digital execution for transparent, high-performing organisations." },
+      { property: "og:title", content: "Advera Consulting — Strategy, Compliance & Digital Innovation" },
+      { property: "og:description", content: "Advera empowers councils, corporations and institutions through ISO consultancy, strategic management, risk & compliance, and digital transformation." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Advera Consulting — Strategy, Compliance & Digital Innovation" },
+      { name: "twitter:description", content: "Advera empowers councils, corporations and institutions through ISO consultancy, strategic management, risk & compliance, and digital transformation." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ba41aaa9-17dd-4fc7-bed2-ae9c62fd8252/id-preview-eec1e8ec--318f3e85-aa14-4be3-837a-82c24d01a0ba.lovable.app-1780001989885.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ba41aaa9-17dd-4fc7-bed2-ae9c62fd8252/id-preview-eec1e8ec--318f3e85-aa14-4be3-837a-82c24d01a0ba.lovable.app-1780001989885.png" },
     ],
     links: [
       {
