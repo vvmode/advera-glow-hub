@@ -153,8 +153,7 @@ export default function Index() {
             {services.map((s) => (
               <Link
                 key={s.id}
-                to="/services"
-                hash={s.id}
+                to={`/services#${s.id}`}
                 className="group grid grid-cols-12 items-baseline gap-6 border-b border-border py-10 transition-colors hover:bg-secondary/60"
               >
                 <span className="col-span-2 font-serif text-2xl text-gold md:col-span-1">{s.number}</span>
