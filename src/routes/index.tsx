@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -6,23 +7,15 @@ import { services } from "@/components/site/data";
 import heroImg from "@/assets/hero.jpg";
 import aboutImg from "@/assets/about.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Advera Consulting — Strategy, Compliance & Digital Innovation" },
-      { name: "description", content: "Advera bridges expert strategy and digital execution — ISO consultancy, strategic management, risk & compliance and capacity building for councils, corporations and institutions." },
-      { property: "og:title", content: "Advera Consulting" },
-      { property: "og:description", content: "Bridging expert strategy and digital execution for transparent, high-performing organisations." },
-      { property: "og:url", content: "/" },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-  }),
-  component: Index,
-});
-
-function Index() {
+export default function Index() {
   return (
     <main className="bg-background text-foreground">
+      <Helmet>
+        <title>Advera Consulting — Strategy, Compliance & Digital Innovation</title>
+        <meta name="description" content="Advera bridges expert strategy and digital execution — ISO consultancy, strategic management, risk & compliance and capacity building for councils, corporations and institutions." />
+        <meta property="og:title" content="Advera Consulting" />
+        <meta property="og:description" content="Bridging expert strategy and digital execution for transparent, high-performing organisations." />
+      </Helmet>
       {/* HERO */}
       <section className="relative isolate min-h-[100svh] overflow-hidden bg-navy-deep text-ivory">
         <img
