@@ -1,27 +1,19 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Helmet } from "react-helmet-async";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Advera Consulting" },
-      { name: "description", content: "Tell us about your organisation. Advera Consulting responds with a tailored approach within two working days." },
-      { property: "og:title", content: "Contact Advera Consulting" },
-      { property: "og:description", content: "Begin a conversation with Advera." },
-      { property: "og:url", content: "/contact" },
-    ],
-    links: [{ rel: "canonical", href: "/contact" }],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
   const [sent, setSent] = useState(false);
   return (
     <main className="bg-background text-foreground">
+      <Helmet>
+        <title>Contact — Advera Consulting</title>
+        <meta name="description" content="Tell us about your organisation. Advera Consulting responds with a tailored approach within two working days." />
+        <meta property="og:title" content="Contact Advera Consulting" />
+        <meta property="og:description" content="Begin a conversation with Advera." />
+      </Helmet>
       <section className="relative bg-navy-deep text-ivory">
         <Nav variant="dark" />
         <div className="mx-auto max-w-7xl px-6 pt-40 pb-24 md:px-10 md:pt-48 md:pb-28">

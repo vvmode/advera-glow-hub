@@ -1,26 +1,19 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { services } from "@/components/site/data";
 import { ArrowUpRight, Check } from "lucide-react";
 
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Advera Consulting" },
-      { name: "description", content: "ISO consultancy, strategic management, operational advisory, risk & compliance, and training & capacity building — tailored for councils, corporations and institutions." },
-      { property: "og:title", content: "Advera Services" },
-      { property: "og:description", content: "Five pillars of strategic and operational excellence." },
-      { property: "og:url", content: "/services" },
-    ],
-    links: [{ rel: "canonical", href: "/services" }],
-  }),
-  component: ServicesPage,
-});
-
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <main className="bg-background text-foreground">
+      <Helmet>
+        <title>Services — Advera Consulting</title>
+        <meta name="description" content="ISO consultancy, strategic management, operational advisory, risk & compliance, and training & capacity building — tailored for councils, corporations and institutions." />
+        <meta property="og:title" content="Advera Services" />
+        <meta property="og:description" content="Five pillars of strategic and operational excellence." />
+      </Helmet>
       <section className="relative bg-navy-deep text-ivory">
         <Nav variant="dark" />
         <div className="mx-auto max-w-7xl px-6 pt-40 pb-24 md:px-10 md:pt-48 md:pb-32">

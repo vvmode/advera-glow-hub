@@ -1,13 +1,13 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const links = [
+const links: { to: string; label: string }[] = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function Nav({ variant = "light" }: { variant?: "light" | "dark" }) {
   const [open, setOpen] = useState(false);
@@ -25,14 +25,16 @@ export function Nav({ variant = "light" }: { variant?: "light" | "dark" }) {
         </Link>
         <nav className="hidden items-center gap-10 text-sm md:flex">
           {links.map((l) => (
-            <Link
+            <NavLink
               key={l.to}
               to={l.to}
-              activeProps={{ className: "text-gold" }}
-              className="transition-colors hover:text-gold"
+              end={l.to === "/"}
+              className={({ isActive }) =>
+                `transition-colors hover:text-gold ${isActive ? "text-gold" : ""}`
+              }
             >
               {l.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
         <Link
