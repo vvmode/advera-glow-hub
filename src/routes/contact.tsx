@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { useState } from "react";
 
 export default function ContactPage() {
@@ -39,28 +39,40 @@ export default function ContactPage() {
                 <Mail size={18} className="mt-0.5 text-gold" />
                 <div>
                   <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Email</p>
-                  <p className="mt-1">hello@advera.consulting</p>
+                  <p className="mt-1">info@advera.mv</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
                 <Phone size={18} className="mt-0.5 text-gold" />
                 <div>
                   <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Phone</p>
-                  <p className="mt-1">+1 (000) 000-0000</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <MapPin size={18} className="mt-0.5 text-gold" />
-                <div>
-                  <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Office</p>
-                  <p className="mt-1">By appointment</p>
+                  <p className="mt-1">+960 7798858</p>
                 </div>
               </li>
             </ul>
           </aside>
 
           <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              const fd = new FormData(e.currentTarget);
+              const name = String(fd.get("name") ?? "");
+              const email = String(fd.get("email") ?? "");
+              const org = String(fd.get("org") ?? "");
+              const topic = String(fd.get("topic") ?? "");
+              const message = String(fd.get("message") ?? "");
+              const body = [
+                `Name: ${name}`,
+                `Email: ${email}`,
+                org ? `Organisation: ${org}` : "",
+                topic ? `Area of interest: ${topic}` : "",
+                "",
+                message,
+              ].filter(Boolean).join("\n");
+              const mailto = `mailto:info@advera.mv?subject=${encodeURIComponent("Enquiry from Advera Website")}&body=${encodeURIComponent(body)}`;
+              window.location.href = mailto;
+              setSent(true);
+            }}
             className="md:col-span-7 md:col-start-6"
           >
             {sent ? (
