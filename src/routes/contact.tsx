@@ -1,11 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
-import { ArrowUpRight, Mail, Phone, MapPin } from "lucide-react";
-import { useState } from "react";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import { useState, useRef } from "react";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
   return (
     <main className="bg-background text-foreground">
       <Helmet>
