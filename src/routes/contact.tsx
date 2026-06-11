@@ -40,21 +40,14 @@ export default function ContactPage() {
                 <Mail size={18} className="mt-0.5 text-gold" />
                 <div>
                   <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Email</p>
-                  <p className="mt-1">hello@advera.consulting</p>
+                  <p className="mt-1">info@advera.mv</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
                 <Phone size={18} className="mt-0.5 text-gold" />
                 <div>
                   <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Phone</p>
-                  <p className="mt-1">+1 (000) 000-0000</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-4">
-                <MapPin size={18} className="mt-0.5 text-gold" />
-                <div>
-                  <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Office</p>
-                  <p className="mt-1">By appointment</p>
+                  <p className="mt-1">+960 7798858</p>
                 </div>
               </li>
             </ul>
