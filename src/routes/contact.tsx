@@ -53,7 +53,26 @@ export default function ContactPage() {
           </aside>
 
           <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            onSubmit={(e) => {
+              e.preventDefault();
+              const fd = new FormData(e.currentTarget);
+              const name = String(fd.get("name") ?? "");
+              const email = String(fd.get("email") ?? "");
+              const org = String(fd.get("org") ?? "");
+              const topic = String(fd.get("topic") ?? "");
+              const message = String(fd.get("message") ?? "");
+              const body = [
+                `Name: ${name}`,
+                `Email: ${email}`,
+                org ? `Organisation: ${org}` : "",
+                topic ? `Area of interest: ${topic}` : "",
+                "",
+                message,
+              ].filter(Boolean).join("\n");
+              const mailto = `mailto:info@advera.mv?subject=${encodeURIComponent("Enquiry from Advera Website")}&body=${encodeURIComponent(body)}`;
+              window.location.href = mailto;
+              setSent(true);
+            }}
             className="md:col-span-7 md:col-start-6"
           >
             {sent ? (
