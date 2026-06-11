@@ -27,9 +27,8 @@ export function Footer() {
           <div className="md:col-span-4">
             <p className="eyebrow">Contact</p>
             <ul className="mt-5 space-y-3 text-sm text-ivory/80">
-              <li>hello@advera.consulting</li>
-              <li>+1 (000) 000-0000</li>
-              <li>Mon — Fri · 09:00 – 18:00</li>
+              <li>info@advera.mv</li>
+              <li>+960 7798858</li>
             </ul>
           </div>
         </div>
